@@ -1,4 +1,4 @@
-fetch("header.html")
+fetch(window.location.origin + window.location.pathname.replace(/[^\/]*$/, '') + "header.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("header").innerHTML = data;
