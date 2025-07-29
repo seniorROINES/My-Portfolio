@@ -1,0 +1,167 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>My resume - Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 3rem;
+        }
+
+        .experience {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: red;
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 0;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: red;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 2rem;
+            background: #111;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+            margin-bottom: 3rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+        }
+
+        .timeline-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: red;
+        }
+
+        .timeline-item p {
+            font-size: 1.4rem;
+            color: #ccc;
+        }
+
+        .timeline-item span.date {
+            display: block;
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Alternance gauche-droite --- */
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 55%;
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: red;
+            border: 3px solid #111;
+            z-index: 1;
+        }
+
+        .timeline-item.left::after {
+            right: -12px;
+        }
+
+        .timeline-item.right::after {
+            left: -12px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 8px;
+            }
+            .timeline-item,
+            .timeline-item.right,
+            .timeline-item.left {
+                width: 100%;
+                left: 0;
+                margin-left: 2rem;
+            }
+            .timeline-item::after {
+                left: -28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class="experience">
+        <h2>My Experiences</h2>
+        <div class="timeline">
+
+            <div class="timeline-item left">
+                <span class="date">2025</span>
+                <h3>Participation in the internal hackathon</h3>
+                <p>Development of artificial intelligence to identify and prevent risk areas in Madagascar’s cities.</p>
+            </div>
+
+            <div class="timeline-item right">
+                <span class="date">2025</span>
+                <h3>Participation in club project</h3>
+                <p>having contributed to the front-end and back-end development of a racing game in phython.</p>
+            </div>
+
+            <div class="timeline-item left">
+                <span class="date">2025</span>
+                <h3>Participation in school projects </h3>
+                <p>Implementation and Development of a Library System.</p>
+            </div>
+
+            <div class="timeline-item right">
+                <span class="date">2024</span>
+                <h3>Creation on a logo</h3>
+                <p>Having thought of and illustrated a company logo.</p>
+            </div>
+
+            <div class="timeline-item left">
+                <span class="date">2024</span>
+                <h3>have managed the customer service position</h3>
+                <p>source of help, exchange and guide for customers in difficulty in person and/or by telephone.</p>
+            </div>
+
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
