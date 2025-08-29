@@ -1,6 +1,6 @@
 fetch(window.location.origin + "/header.html")
     .then(response => response.text())
-    .then(html => {
+    .then(data => {
         document.getElementById("header").innerHTML = html;
 
         // On attend que le DOM mis à jour soit prêt
@@ -81,6 +81,7 @@ function typeEffect() {
     setTimeout(typeEffect, deleting ? 50 : 100);
 }
 typeEffect();
+
 
 
 
