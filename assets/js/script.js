@@ -1,7 +1,7 @@
 fetch(window.location.origin + "/header.html")
     .then(response => response.text())
-    .then(data => {
-        document.getElementById("header").innerHTML = data;
+    .then(html => {
+        document.getElementById("header").innerHTML = html;
 
         // On attend que le DOM mis à jour soit prêt
         requestAnimationFrame(() => {
@@ -81,5 +81,6 @@ function typeEffect() {
     setTimeout(typeEffect, deleting ? 50 : 100);
 }
 typeEffect();
+
 
 
