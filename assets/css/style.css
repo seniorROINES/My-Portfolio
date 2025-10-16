@@ -326,9 +326,23 @@ span{
     } 
 
     .skills {
-        margin-top: 500px;
-        flex-direction: column;
+    margin-top: 2rem; /* ou 20px */
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
     }
+
+    .skills > div {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .progress {
+        width: 40%; 
+        height: auto;
+    }
+
 
     .contact, .contact-info{
         font-size: 5rem;
@@ -637,7 +651,7 @@ span{
 
 .skills{
     position: relative;
-    width: 2vw;
+    width: 32vw;
     border-radius: 50px;
     box-shadow: 0 0 25px solid red;
     cursor: pointer;
@@ -684,4 +698,5 @@ span{
     color: #aaa;
 
 }
+
 
