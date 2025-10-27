@@ -1,24 +1,16 @@
-// Charger dynamiquement le contenu du header
+
 fetch('header.html')
   .then(response => response.text())
   .then(html => {
-    // Insère le code HTML du header dans la div #header
     document.getElementById("header").innerHTML = html;
-
-    // On attend la fin de l'injection pour travailler sur les éléments ajoutés
     requestAnimationFrame(() => {
-      // Déterminer le nom du fichier de la page courante (ex: "index.html")
       const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-      // Activer le lien de navigation correspondant (dans #header et #side-menu)
       document.querySelectorAll("nav a, #side-menu a").forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === currentPage) {
           link.classList.add("active");
         }
       });
-
-      // Gestion du modal du logo
       const logo = document.querySelector(".logo");
       const modal = document.getElementById("logoModal");
       const closeBtn = document.querySelector(".close-btn");
@@ -32,8 +24,6 @@ fetch('header.html')
           if (e.target === modal) modal.style.display = "none";
         });
       }
-
-      // Bascule du menu responsive (toggle)
       const menuToggle = document.getElementById("menu-toggle");
       const sideMenu   = document.getElementById("side-menu");
       const overlay    = document.getElementById("overlay");
@@ -52,8 +42,6 @@ fetch('header.html')
     });
   })
   .catch(err => console.error("Erreur chargement header :", err));
-
-// Effet de texte animé (typewriter) – exemple
 const roles = ["Web Developer", "Designer", "Software Developer"];
 const typedText = document.getElementById("typed-text");
 let roleIndex = 0, charIndex = 0, deleting = false;
@@ -78,3 +66,4 @@ function typeEffect() {
   setTimeout(typeEffect, deleting ? 50 : 100);
 }
 typeEffect();
+
